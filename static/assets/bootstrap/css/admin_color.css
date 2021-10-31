@@ -3,7 +3,7 @@
 }
 
 #header {
-    background: #001903;
+    background: #015335;
     color: #fff;
 }
 #header a:link, #header a:visited {
@@ -15,7 +15,7 @@
 }
 
 div.breadcrumbs {
-    background: #027409;
+    background: #1cc88a;
     color: #c4dce8;
 }
 div.breadcrumbs a.active {
@@ -39,14 +39,14 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 }
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: #027409;
+    background: #1cc88a;
 }
 .button:hover, input[type=submit]:hover, input[type=button]:hover {
     background: #878787;
 }
 
 .module h2, .module caption, .inline-group h2 {
-    background: #027409;
+    background: #1cc88a;
 }
 #user-tools a:focus, #user-tools a:hover {
     border: 0;
@@ -54,16 +54,16 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 }
 
 .selector-chosen h2 {
-    background: #027409 !important;
+    background: #1cc88a !important;
 }
 
 .calendar td.selected a {
-    background: #027409 !important;
+    background: #1cc88a !important;
 }
 
 .calendar td a:focus, .timelist a:focus,
 .calendar td a:hover, .timelist a:hover {
-    background: #027409 !important;
+    background: #1cc88a !important;
 }
 
 #changelist-filter li.selected a {
