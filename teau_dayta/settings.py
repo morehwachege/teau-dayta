@@ -29,7 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'admin_interface',
+    'colorfield',
 ]
+X_FRAME_OPTIONS='SAMEORIGIN'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,3 +125,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+ADMIN_SITE_HEADER = "Teau Dayta administration"
+ADMIN_SITE_TITLE = "Teau Dayta administration"
+ADMIN_INDEX_TITLE = "Teau Dayta"
