@@ -46,6 +46,9 @@ def register_request(request):
         if form.is_valid():
             form.save()           
             return redirect(reverse('members:login_user'))
+        else:
+            messages.success(request, 'Error signing up, please enter strong, unique credentials and Try Again...')
+            return redirect(reverse('members:register'))
     form = SignUpForm()
     context = {
         'register_form': form
