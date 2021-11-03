@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Register - TEAU DAYTA</title>
+    <meta name="description" content="Data Analytics Software for Machine Learning and Data Science Department.">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css'%}">
+</head>
+
+<body class="bg-gradient-success">
+    <div class="container">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-flex">
+                        <div class="flex-grow-1 bg-register-image"></div>
+                        <style>
+                            .flex-grow-1.bg-register-image {
+                                background-image: url("https://images.unsplash.com/photo-1612198273689-b437f53152ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRhdGElMjBhbmFseXRpY3N8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+                            }
+
+                            .flex-grow-1.bg-login-image {
+                                background-image: url("https://images.unsplash.com/photo-1612198273689-b437f53152ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRhdGElMjBhbmFseXRpY3N8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+                            }
+
+                            .text-dark.mb-4.error {
+                                color: red !important;
+                                padding: 20px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                width: 320px;
+                            }
+
+                            @media screen and (max-width: 481px) {
+                                .text-dark.mb-4.error {
+                                    color: red !important;
+                                    padding: 20px;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    width: 250px;
+                                }
+                            }
+
+                            @media screen and (max-width: 320px) {
+                                .text-dark.mb-4.error {
+                                    color: red !important;
+                                    padding: 20px;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    width: 180px;
+                                }
+                            }
+                        </style>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-4">Create an Account!</h4>
+                                {% if messages %}
+                                {% for message in messages%}
+                                <p class="text-dark mb-4 error">{{ message }}</p>
+                                {% endfor%}
+                                {% endif %}
+                            </div>
+                            <form class="user" action="{% url 'members:register' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        {{register_form.first_name}}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{register_form.last_name}}
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">{{register_form.username}}</div>
+                                <div class="mb-3">
+                                    {{register_form.email}}
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        {{register_form.password1}}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{register_form.password2}}
+                                    </div>
+                                </div><button class="btn btn-success d-block btn-user w-100" type="submit">Register
+                                    Account</button>
+                                <hr><a class="btn btn-success d-block btn-google btn-user w-100 mb-2" role="button"><i
+                                        class="fab fa-google"></i>&nbsp; Register with Google</a><a
+                                    class="btn btn-success d-block btn-facebook btn-user w-100" role="button"><i
+                                        class="fab fa-facebook-f"></i>&nbsp; Register with Facebook</a>
+                                <hr>
+                            </form>
+                            <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a>
+                            </div>
+                            <div class="text-center"><a class="small" href="login.html">Already have an account?
+                                    Login!</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
