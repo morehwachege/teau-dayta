@@ -5,6 +5,11 @@ from django.urls.base import reverse
 # Create your views here.
 def index(request):
     if request.user.is_authenticated:
+
+
+        # This is where we will place all the data science activity
+
+
         return render(request, 'index.html')
     else:
         return redirect(reverse('members:login_user'))
