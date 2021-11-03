@@ -122,7 +122,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow">
                                     {% if user.is_authenticated %}
-                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="{% url 'data:profile'%}">
                                         <span class="d-none d-lg-inline me-2 text-gray-600 small">
                                             {% if user.get_full_name%}
                                             {{user.get_full_name|title}}

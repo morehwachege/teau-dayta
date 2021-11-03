@@ -132,4 +132,4 @@ ADMIN_INDEX_TITLE = "Teau Dayta"
 ADMIN_SITE_URL = "\dashboard"
 
 LOGIN_REDIRECT_URL = 'dashboard'
-LOGOUT_REDIRECT_URL = 'login_user'
+LOGOUT_REDIRECT_URL = 'members:login_user'
