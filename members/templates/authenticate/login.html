@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - TEAU DAYTA</title>
+    <meta name="description" content="Data Analytics Software for Machine Learning and Data Science Department.">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css'}">
+</head>
+
+<body class="bg-gradient-success">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex">
+                                <div class="flex-grow-1 bg-login-image"></div>
+                                <style>
+                                    .flex-grow-1.bg-login-image{
+                                        background-image: url("https://images.unsplash.com/photo-1612198273689-b437f53152ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRhdGElMjBhbmFseXRpY3N8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+                                    }
+                                    .text-dark.mb-4.error{
+                                        color: red!important;
+                                        padding: 20px;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        width: 320px;
+                                    }
+                                    @media screen and (max-width: 481px){
+                                        .text-dark.mb-4.error{
+                                            color: red!important;
+                                            padding: 20px;
+                                            font-size: 12px;
+                                            font-weight: 600;
+                                            width: 250px;
+                                        }
+                                    }
+                                    @media screen and (max-width: 320px){
+                                        .text-dark.mb-4.error{
+                                            color: red!important;
+                                            padding: 20px;
+                                            font-size: 12px;
+                                            font-weight: 600;
+                                            width: 180px;
+                                        }
+                                    }
+                                </style>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">Welcome to Teau Dayta! Log in</h4>
+                                        {% if messages %}
+                                            {% for message in messages%}
+                                            <p class="text-dark mb-4 error">{{ message }}</p>
+                                            {% endfor%}
+                                        {% endif %}
+                                    </div>
+                                    <form class="user" action="{% url 'members:login_user' %}" method="POST">
+                                        {% csrf_token %}
+                                        <!-- <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email" name="email"></div> -->
+                                        <div class="mb-3"><input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="usernameHelp" placeholder="Username" name="username"></div>
+                                        <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password"></div>
+                                        <div class="mb-3">
+                                            <div class="custom-control custom-checkbox small">
+                                                <div class="form-check"><input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"><label class="form-check-label custom-control-label" for="formCheck-1">Remember Me</label></div>
+                                            </div>
+                                        </div><button class="btn btn-success d-block btn-user w-100" type="submit">Login</button>
+                                        <hr><a class="btn btn-success d-block btn-google btn-user w-100 mb-2" role="button"><i class="fab fa-google"></i>&nbsp; Login with Google</a><a class="btn btn-success d-block btn-facebook btn-user w-100" role="button"><i class="fab fa-facebook-f"></i>&nbsp; Login with Facebook</a>
+                                        <hr>
+                                    </form>
+                                    <div class="text-center"><a class="small" href="{% url 'data:forgot-password' %}">Forgot Password?</a></div>
+                                    <div class="text-center"><a class="small" href="register.html">Create an Account!</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js'}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+</body>
+
+</html>

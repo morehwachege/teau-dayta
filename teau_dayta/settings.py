@@ -17,7 +17,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'admin_interface',
     'colorfield',
+    'members',
 ]
 X_FRAME_OPTIONS='SAMEORIGIN'
 
@@ -128,3 +129,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 ADMIN_SITE_HEADER = "Teau Dayta administration"
 ADMIN_SITE_TITLE = "Teau Dayta administration"
 ADMIN_INDEX_TITLE = "Teau Dayta"
+ADMIN_SITE_URL = "\dashboard"
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'login_user'

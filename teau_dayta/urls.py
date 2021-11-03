@@ -22,9 +22,12 @@ from django.conf.urls.static import static
 admin.site.site_header = settings.ADMIN_SITE_HEADER
 admin.site.site_title = settings.ADMIN_SITE_TITLE
 admin.site.index_title = settings.ADMIN_INDEX_TITLE
+admin.site.site_url = settings.ADMIN_SITE_URL
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('data.urls')),
+    path('members/', include('django.contrib.auth.urls')),
+    path('', include('members.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
