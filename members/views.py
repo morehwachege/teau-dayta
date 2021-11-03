@@ -44,12 +44,7 @@ def register_request(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            # username = form.cleaned_data.get('username')
-            # password = form.cleaned_data.get('password')
-            # email = form.cleaned_data.get('email')
-            form.save()
-            # new_user = authenticate(username=username, password=password)
-            
+            form.save()           
             return redirect(reverse('members:login_user'))
     form = SignUpForm()
     context = {
