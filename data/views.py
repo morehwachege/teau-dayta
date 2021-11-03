@@ -27,4 +27,5 @@ def blank(request):
 
 
 def forgot_password(request):
+    # this view should be moved to the members app
     return render(request, 'forgot-password.html')

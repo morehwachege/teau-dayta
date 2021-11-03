@@ -24,13 +24,8 @@
                         <div class="flex-grow-1 bg-register-image"></div>
                         <style>
                             .flex-grow-1.bg-register-image {
-                                background-image: url("https://images.unsplash.com/photo-1612198273689-b437f53152ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRhdGElMjBhbmFseXRpY3N8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+                                background-image: url("https://images.unsplash.com/photo-1617871772974-26b107fc4c88?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGRhdGElMjBhbmFseXRpY3N8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
                             }
-
-                            .flex-grow-1.bg-login-image {
-                                background-image: url("https://images.unsplash.com/photo-1612198273689-b437f53152ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRhdGElMjBhbmFseXRpY3N8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-                            }
-
                             .text-dark.mb-4.error {
                                 color: red !important;
                                 padding: 20px;
@@ -102,7 +97,7 @@
                             </form>
                             <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
-                            <div class="text-center"><a class="small" href="login.html">Already have an account?
+                            <div class="text-center"><a class="small" href="{% url 'members:login_user' %}">Already have an account?
                                     Login!</a></div>
                         </div>
                     </div>
